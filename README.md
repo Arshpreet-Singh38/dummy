@@ -30,7 +30,7 @@ Below is a list of technology to use:
 ## How to manage your work
 
 - Create a fork of this repo
-- Make sure the repo is set to **private** and add me to the repo `jbhandari`
+- Make sure the repo is set to **private** and add the following GitHub users: `jbhandari` & `fztr`
 - Make sure to commit your code in logical portions, we like a good git workflow and a clean git history !
   - ex: `Added ability to fetch price`
 
