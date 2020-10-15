@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Tue Oct 13:48:21 2020
+Created on Wed Oct 14 17:21:07 2020
 
 @author: singh
 """
@@ -8,7 +8,6 @@ Created on Tue Oct 13:48:21 2020
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import NoSuchElementException
-from time import sleep
 
 ##Global Variables for User Inputs##
 preferred_vendor_list=[]
@@ -25,8 +24,8 @@ def initialize_driver():
 
 ##Displaying Welcome Message##
 def welcome_message():
-    print("===================== Welcome to Bell ========================")
-    print("Please answer the following search questions to filter results!")
+    print("===================== Welcome to Bell ========================\n")
+    print("Please answer the following search questions to filter results!\n")
 
 ##Displaying search questions and waiting for the user inputs##
 def prompt_filter_questions():
@@ -49,12 +48,12 @@ def prompt_filter_questions():
             preferred_vendor_list=['samsung','apple','lg','google','huawei','TCL','motorola']
     while True:
         try:
-            from_monthly_price=float(input("Please provide the lower limit for 24 month monthly price $0 down ('-1' to Skip): "))
+            from_monthly_price=float(input("Please provide the preferred lower limit for 24 month monthly price $0 down ('-1' to Skip): "))
             if(from_monthly_price!=-1):
-                to_monthly_price=float(input("Please provide the upper limit for 24 month monthly price $0 down ('-1' to Skip): "))
-            from_full_device_price=float(input("Please provide the lower limit for Full Device Price ('-1' to Skip): "))
+                to_monthly_price=float(input("Please provide the preferred upper limit for 24 month monthly price $0 down ('-1' to Skip): "))
+            from_full_device_price=float(input("Please provide the preferred lower limit for Full Device Price ('-1' to Skip): "))
             if(from_full_device_price!=-1):
-                to_full_device_price=float(input("Please provide the upper limit for Full Device Price ('-1' to Skip): "))
+                to_full_device_price=float(input("Please provide the preferred upper limit for Full Device Price ('-1' to Skip): "))
             break
         except ValueError:
             print("Incorrect input for the price range!")
@@ -71,14 +70,12 @@ def prompt_filter_questions():
 ##Displaying the BELL Homepage##
 def get_page(driver,page):
     driver.get(page)
-    sleep(3)
 
 ##Filtering the Phone Models available based on user input for the Preferred Vendor##
 def vendor_models(driver,preferred_vendor):
     vendor_main_web = driver.find_element_by_id("filter_nav_"+preferred_vendor.lower())
     #Sending a signal that Return key has been pressed,to navigate to the page of the desired vendor.
     vendor_main_web.send_keys(Keys.RETURN)
-    sleep(3)
     el1=driver.find_element_by_id("dl-list-"+preferred_vendor.lower())
     
     #Retrieve the list of phone models available for the preferred vendor.
@@ -177,7 +174,6 @@ if __name__ == "__main__":
         for vendor in preferred_vendor_list:
             phone_models_list=vendor_models(driver,vendor)
             price_range_models_list=price_range_models(driver,phone_models_list)
-            sleep(3)
             models_details_dict=models_details(price_range_models_list)
             display_model_details(models_details_dict,vendor)
             print("\n")
