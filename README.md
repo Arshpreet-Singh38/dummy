@@ -10,38 +10,38 @@ The program fetches the phone models which satisfy the search criteria, extracts
 
 1) Clone the project from GitHub.
 
-2) Download chromedriver (Chrome): https://sites.google.com/a/chromium.org/chromedriver/downloads depending on the Chrome version you are using.
+2) Download chromedriver: https://sites.google.com/a/chromium.org/chromedriver/downloads depending on the Chrome version.
 
-3) Extract the: chromedriver_win32.zip folder and it will give you the: chromedriver.exe
+3) Extract the: chromedriver_win32.zip folder to get the: chromedriver.exe.
 
-4) Place the executable file: chromedriver.exe in C:\Windows so that Python and Selenium can find it.
+4) Place the executable file: chromedriver.exe in C:\Windows for Python and Selenium to find it.
 
-* If you already have PIP installed skip step 5-7:
+* Skip steps 5-7 if pip already installed:
 
 5) Download get-pip.py to install pip: https://phoenixnap.com/kb/install-pip-windows
 
 6) Open Command Prompt and navigate to the location of the get-pip.py file
 
-7) To install PIP, type
+7) To install pip, type
 
-```bash
+```
 python get-pip.py
 ```
 8) Open Command Prompt
 
 9) To install Selenium Webdriver, type
 
-```bash
+```
 pip install selenium
 ```
-10) Now go to the Project Directory via the command prompt
+10) Now go to the Project Directory via command prompt
 
 11) Now, to run the program, type 
 
-```bash
+```
 python source_price_lookup.py
 ```
-12) After execution, you will see a welcome message, after which the Bell Smartphone Homepage will load in the foreground.
+12) After execution, a welcome message will be displayed followed by loading the Bell Smartphone Homepage in the foreground.
 
 13) The questions will be prompted for user inputs that form the basis for search criteria.
 
@@ -52,23 +52,23 @@ python source_price_lookup.py
 
 2) Install pip on Ubuntu
 
-```bash
+```
 apt install python3-pip
 ```
 3) Install Selenium by executing the following command in Terminal:
 
-```bash
+```
 pip install selenium
 ```
 4) Install Chromedriver for Chrome:
 
-```bash
+```
 wget https://chromedriver.storage.googleapis.com/83.0.4103.39/chromedriver_linux64.zip
 ```
-```bash
+```
 unzip chromedriver_linux64.zip
 ```
-```bash
+```
 sudo mv chromedriver /usr/local/bin/
 ```
 5) Open Terminal
@@ -81,6 +81,6 @@ sudo mv chromedriver /usr/local/bin/
 python source_price_lookup.py
 ```
 
-8) After execution, you will see the a welcome message, after which the Bell Smartphone Homepage will load in the foreground.
+8) After execution, a welcome message will be displayed followed by loading the Bell Smartphone Homepage in the foreground.
 
 9) The questions will be prompted for user inputs that form the basis for search criteria.
