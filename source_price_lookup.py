@@ -38,14 +38,15 @@ def prompt_filter_questions():
     #The search criteria will be based on the preferred vendors,desired 24 month monthly price range at $0 down
         #the desired device full price range and preferred colors.The questions are OPTIONAL, can be skipped by '-1'
     print("Please provide the list of Preferred Vendors ('-1' to Skip or '-1' after listing preferred vendors)?")
+    vendor_list=['samsung','apple','lg','google','huawei','tcl','motorola']
     while True:
         preferred_vendor=input()
-        if(preferred_vendor!="-1"):
+        if(preferred_vendor!="-1" and preferred_vendor.lower() in vendor_list):
             preferred_vendor_list.append(preferred_vendor)
-        else:
+        elif(preferred_vendor=="-1"):
             break;
     if(len(preferred_vendor_list)==0):
-            preferred_vendor_list=['samsung','apple','lg','google','huawei','TCL','motorola']
+            preferred_vendor_list=vendor_list
     while True:
         try:
             from_monthly_price=float(input("Please provide the preferred lower limit for 24 month monthly price $0 down ('-1' to Skip): "))

@@ -6,6 +6,8 @@ DESCRITION: As a user starts the program a welcome message is displayed, followe
 
 The program fetches the phone models which satisfy the search criteria, extracts and displays the details on the CLI(Command-line interface).
 
+Assumptions: User input for the preferred color should be a valid color as the program doesn't check the preferred color with a range of valid colors. In addition, preferred color should be specific as 'Black' does not consider 'AppleBlack' or 'AppleJetBlack','Blue' does not consider 'DarkBlue'.  
+
 ## Instructions to run the project (Windows)
 
 1) Clone the project from GitHub.
